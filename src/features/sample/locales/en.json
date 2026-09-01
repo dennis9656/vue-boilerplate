@@ -1,0 +1,34 @@
+{
+  "sample": {
+    "list": {
+      "title": "Samples",
+      "subtitle": "{count} items",
+      "search": "Search by name",
+      "searchLabel": "Search samples",
+      "statusLabel": "Filter by status",
+      "status": {
+        "all": "All",
+        "active": "Active",
+        "archived": "Archived"
+      },
+      "reset": "Reset filters"
+    },
+    "detail": {
+      "back": "Back to list",
+      "owner": "Owner",
+      "createdAt": "Created"
+    },
+    "create": {
+      "title": "Add a sample",
+      "name": "Name",
+      "namePlaceholder": "New sample name",
+      "submit": "Add",
+      "submitting": "Adding…",
+      "nameRequired": "Enter a name."
+    },
+    "status": {
+      "active": "Active",
+      "archived": "Archived"
+    }
+  }
+}
