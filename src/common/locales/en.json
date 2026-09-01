@@ -1,0 +1,47 @@
+{
+  "app": {
+    "title": "Vue Boilerplate",
+    "nav": {
+      "home": "Home",
+      "samples": "Samples"
+    },
+    "theme": {
+      "toggle": "Toggle theme",
+      "light": "Light",
+      "dark": "Dark"
+    },
+    "language": "Language"
+  },
+  "state": {
+    "loading": "Loading…",
+    "empty": "Nothing to show.",
+    "error": "The request could not be completed.",
+    "retry": "Retry"
+  },
+  "notFound": {
+    "title": "Page not found",
+    "description": "The address changed, or the page was removed.",
+    "back": "Back to home"
+  },
+  "home": {
+    "lede": "A starting point that implements the vue-spa pack as written: layer boundaries, a query key factory, URL state, MSW. One sample domain is the reference implementation for every rule.",
+    "pillars": {
+      "fetch": {
+        "title": "One thin fetch wrapper",
+        "body": "No axios. `lib/http.ts` only, with cross-origin and cookie auth assumed."
+      },
+      "query": {
+        "title": "Server state in the cache",
+        "body": "Pinia holds client state. Server entities are referenced by id."
+      },
+      "url": {
+        "title": "Filters live in the URL",
+        "body": "The query params are part of the query key, so cache and address cannot disagree."
+      },
+      "msw": {
+        "title": "MSW intercepts in the browser",
+        "body": "There is no server hop, so the browser is the only place an interceptor can sit."
+      }
+    }
+  }
+}
