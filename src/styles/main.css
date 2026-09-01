@@ -1,0 +1,83 @@
+@import 'tailwindcss';
+
+/*
+ * Theme is an explicit attribute on <html>, owned by the ui store.
+ * Not a media query — the user's choice has to be able to win.
+ */
+@custom-variant dark (&:where([data-theme='dark'], [data-theme='dark'] *));
+
+/*
+ * Design tokens. Direction: Swiss/editorial — ink on warm paper, one accent
+ * carrying every interactive affordance, hierarchy from scale rather than from
+ * boxes. Values live here because Tailwind v4 has no config file.
+ */
+:root {
+  --app-surface: oklch(97.5% 0.006 95);
+  --app-raised: oklch(100% 0 0);
+  --app-ink: oklch(21% 0.012 95);
+  --app-muted: oklch(52% 0.014 95);
+  --app-line: oklch(89% 0.008 95);
+  --app-accent: oklch(58% 0.17 32);
+  --app-accent-soft: oklch(94% 0.035 40);
+  --app-danger: oklch(52% 0.19 20);
+
+  --text-hero: clamp(2.5rem, 1.6rem + 3.6vw, 4.5rem);
+  --space-section: clamp(2.5rem, 1.8rem + 3vw, 5rem);
+  --duration-fast: 150ms;
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+[data-theme='dark'] {
+  --app-surface: oklch(17% 0.012 95);
+  --app-raised: oklch(22% 0.014 95);
+  --app-ink: oklch(95% 0.006 95);
+  --app-muted: oklch(70% 0.012 95);
+  --app-line: oklch(30% 0.012 95);
+  --app-accent: oklch(72% 0.15 40);
+  --app-accent-soft: oklch(30% 0.06 40);
+  --app-danger: oklch(68% 0.16 22);
+}
+
+@theme inline {
+  --color-surface: var(--app-surface);
+  --color-raised: var(--app-raised);
+  --color-ink: var(--app-ink);
+  --color-muted: var(--app-muted);
+  --color-line: var(--app-line);
+  --color-accent: var(--app-accent);
+  --color-accent-soft: var(--app-accent-soft);
+  --color-danger: var(--app-danger);
+
+  --font-display: ui-serif, 'Iowan Old Style', Georgia, 'Noto Serif KR', serif;
+  --font-sans:
+    ui-sans-serif, system-ui, -apple-system, 'Segoe UI', 'Pretendard', 'Noto Sans KR', sans-serif;
+}
+
+html {
+  color-scheme: light;
+}
+[data-theme='dark'] {
+  color-scheme: dark;
+}
+
+body {
+  background-color: var(--app-surface);
+  color: var(--app-ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Focus is designed, not defaulted away. */
+:focus-visible {
+  outline: 2px solid var(--app-accent);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}

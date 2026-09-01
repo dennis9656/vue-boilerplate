@@ -1,0 +1,16 @@
+<template>
+  <!-- Decorative: the accessible name belongs to the wrapping link or button. -->
+  <svg
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="1.6"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    aria-hidden="true"
+    focusable="false"
+  >
+    <path d="M3 10.5 12 3l9 7.5" />
+    <path d="M5.5 9.5V21h13V9.5" />
+  </svg>
+</template>
