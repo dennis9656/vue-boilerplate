@@ -4,7 +4,7 @@ Project-level decisions the rule packs require to be recorded. An unrecorded
 decision is the failure mode these entries exist to prevent.
 
 ```yaml
-framework: vue-spa            # rules/web/FRAMEWORKS.md — explicit declaration wins over detection
+framework: vue-spa            # .claude/rules/README.md — the only architecture these rules describe
 package-manager: npm
 
 bundle-budget:                # gzipped, rules/web/performance.md

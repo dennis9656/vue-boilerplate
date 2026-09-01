@@ -1,7 +1,7 @@
 # vue-boilerplate
 
 Vue 3 + Vite SPA boilerplate implementing `.claude/rules/vue-spa/` as written —
-no BFF, the browser calls the backend directly.
+no server of its own, the browser calls the backend directly.
 
 ```bash
 npm install
@@ -62,7 +62,8 @@ Each is one file away, with the reasoning in a comment at the point of use:
 - **Filters live in the URL and *are* part of the query key** —
   `src/features/sample/composables/useSampleFilters.ts`.
 - **One QueryClient outlives the session** — so `src/lib/session.ts` clears it on
-  logout and account switch. A BFF got that from the request boundary for free.
+  logout and account switch. A per-request server boundary would have given that
+  for free.
 - **MSW intercepts in the browser** — there is no server hop, so it is the only
   correct placement. `__mocks__/browser.ts`.
 - **Components live in the domain, not under `views/`** — `views/` composes.

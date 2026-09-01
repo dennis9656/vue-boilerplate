@@ -4,8 +4,8 @@ import { http } from '@/lib/http'
 import type { CreateSampleInput, Sample, SampleListFilters } from '../types/sample'
 
 /**
- * One API file per domain. The split a BFF pack makes exists because two callers
- * reach the backend by two different paths; there is one caller here.
+ * One API file per domain. A server/client split exists where two callers reach
+ * the backend by two different paths; there is one caller here.
  *
  * This layer must not import from `queries/` — the arrow points one way.
  */

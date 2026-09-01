@@ -9,8 +9,9 @@ const MAX_RETRIES = 2
 /**
  * One client for the whole app.
  *
- * A BFF pack forbids module-level construction because one server process
- * serves many users. A browser tab is one user, so that reasoning does not hold
+ * Where the frontend has a server of its own, module-level construction is
+ * forbidden: one server process serves many users, and a shared cache leaks one
+ * user's response to another. A browser tab is one user, so that does not hold
  * here — but the risk moves rather than disappearing: this instance outlives the
  * session, so `clearSession()` in `lib/session.ts` must clear it on logout and
  * on account switch. See rules/vue-spa/patterns.md.
