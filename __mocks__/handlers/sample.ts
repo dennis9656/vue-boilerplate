@@ -10,28 +10,29 @@ import type { Sample } from '@/features/sample/types/sample'
  * whole integration suite lie about what the backend does.
  *
  * Note what is absent: no email, no phone, no address. The backend minimizes PII
- * before the response leaves it, and the contract says so.
+ * before the response leaves it, and the contract says so. Owner names are
+ * placeholders (홍길동 / Jane Doe) — never a real person, not even the author's.
  */
 export const sampleFixtures: Sample[] = [
   {
     id: 1,
     name: 'Onboarding checklist',
     status: 'active',
-    ownerName: '한호수',
+    ownerName: '홍길동',
     createdAt: '2026-01-14T09:00:00.000Z',
   },
   {
     id: 2,
     name: 'Quarterly retro notes',
     status: 'archived',
-    ownerName: 'Dana Lee',
+    ownerName: 'Jane Doe',
     createdAt: '2025-11-02T13:30:00.000Z',
   },
   {
     id: 3,
     name: 'Design token audit',
     status: 'active',
-    ownerName: 'Minji Park',
+    ownerName: 'John Doe',
     createdAt: '2026-02-20T02:10:00.000Z',
   },
 ]
@@ -84,7 +85,7 @@ export const sampleHandlers = [
       id: Math.max(0, ...store.map((sample) => sample.id)) + 1,
       name: body.name.trim(),
       status: 'active',
-      ownerName: '한호수',
+      ownerName: '홍길동',
       createdAt: new Date().toISOString(),
     }
     store.unshift(created)
